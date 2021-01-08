@@ -18,7 +18,7 @@ public class PickAndSum {
 		for(int i = 0; i < numbersLength; i++) {
 			for(int j = 0; j < numbersLength; j++) {
 				if(i == j) continue;
-				treeSet.add(numbers[i] + numbers[j]);
+				treeSet.add(numbers[i] + numbers[j]); 
 			}
 		}
 
