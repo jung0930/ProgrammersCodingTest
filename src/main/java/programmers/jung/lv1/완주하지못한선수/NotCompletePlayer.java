@@ -2,7 +2,7 @@ package main.java.programmers.jung.lv1.완주하지못한선수;
 
 import java.util.Arrays;
 
-// https://programmers.co.kr/learn/courses/30/lessons/42576 
+// https://programmers.co.kr/learn/courses/30/lessons/42576
 public class NotCompletePlayer {
 
     public static void main(String[] args) {
