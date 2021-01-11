@@ -12,40 +12,40 @@ public class MathTest {
 
 	
     public static int[] solution(int[] answers) {
-        int[] answer = {};
-        int answersLength = answers.length;
-        int[] person1 = {1, 2, 3, 4, 5};
-        int[] person2 = {2, 1, 2, 3, 2, 4, 2, 5};
-        int[] person3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-        int person1Length = person1.length;
-        int person2Length = person2.length;
-        int person3Length = person3.length;
-        
-        int answer1=0, answer2 =0, answer3 =0;
-        
-        for(int i =0; i<answersLength; i++) {
-            if(person1[i%person1Length] == answers[i]) answer1++;
-            if(person2[i%person2Length] == answers[i]) answer2++;
-            if(person3[i%person3Length] == answers[i]) answer3++;
-        }
-        
-        int max = Math.max(Math.max(answer1, answer2),answer3);
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        
-        if(max==answer1) list.add(1);
-        if(max==answer2) list.add(2);
-        if(max==answer3) list.add(3);
-        
-        answer = new int[list.size()];
-        
-        for(int i =0; i<answer.length; i++) {
-        	answer[i] = list.get(i);
-        }
-        
+    	int[] answers1 = {1, 2, 3, 4, 5};
+    	int[] answers2 = {2, 1, 2, 3, 2, 4, 2, 5};
+    	int[] answers3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
+    	int answers1Length = answers1.length;
+    	int answers2Length = answers2.length;
+    	int answers3Length = answers3.length;
+    	int count1 = 0, count2 = 0, count3 = 0;
+    	
+    	int answersLength = answers.length;
+    	
+    	for(int i = 0; i < answersLength; i++) {
+    		int num = answers[i];
+    		if(answers1[i%answers1Length] == num) count1++;
+    		if(answers2[i%answers2Length] == num) count2++;
+    		if(answers3[i%answers3Length] == num) count3++;
+    	}
+    	
+    	int max = Math.max(count1, Math.max(count2, count3));
+    	ArrayList<Integer> list = new ArrayList<Integer>();
+    	
+    	if(max == count1) list.add(1);
+    	if(max == count2) list.add(2);
+    	if(max == count3) list.add(3);
+    	
+    	// return list.stream().mapToInt(i->i.intValue()).toArray();
+    	
+    	int[] answer = new int[list.size()];
+    	int answerLength = answer.length;
+    	
+    	for(int i = 0; i < answerLength; i++) {
+    		answer[i] = list.get(i);
+    	}
+    	
         return answer;
-        
-        // return list.stream().mapToInt(i->i.intValue()).toArray();
-        
     }
     
     
