@@ -1,7 +1,6 @@
 package main.java.programmers.jung.lv1.같은숫자는싫어;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
 
 // https://programmers.co.kr/learn/courses/30/lessons/12906
 public class HateSameNumber {
@@ -12,16 +11,33 @@ public class HateSameNumber {
 	}
 	
 	public static int[] solution(int[] arr) {
-		Set<Integer> set = new HashSet<Integer> ();
-		int arrLength = arr.length;
+		ArrayList<Integer> list = new ArrayList<Integer> ();
+		int preNum = 0;
 		
-		for(int i = 0; i < arrLength; i++) {
+		for(int i = 0; i < arr.length; i++) {
+			if(i == 0) {
+				list.add(arr[i]);
+				preNum = arr[i];
+				continue;
+			}else if(i == arr.length) {
+				break;
+			}
 			
+			if(preNum != arr[i]) {
+				list.add(arr[i]);
+				preNum = arr[i];
+			}
 			
 		}
 		
+		int[] answers = new int[list.size()];
+		int index = 0;
 		
-		return null;
+		for(Integer i : list) {
+			answers[index++] = i;
+		}
+		
+		return answers;
 	}
 
 }
