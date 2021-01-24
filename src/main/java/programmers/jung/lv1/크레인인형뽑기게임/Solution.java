@@ -19,6 +19,22 @@ public class Solution {
                 if (board[i][move - 1] == 0) {
                     continue;
                 }
+                if (stack.isEmpty()) {
+                    stack.push(board[i][move - 1]);
+                    board[i][move - 1] = 0;
+                    break;
+                }
+                if (stack.peek() == board[i][move - 1]) {
+                    // 바구니(stack)에 이미 들어있는 값과 지금 잡는 값이 같으면
+                    stack.pop();
+                    answer += 2;
+                    board[i][move - 1] = 0;
+                    break;
+                } 
+                // 바구니(stack) 에 들어있는 값과 지금 잡는 값이 다르면
+                stack.push(board[i][move - 1]);
+                board[i][move - 1] = 0;
+                break;
             }
         }
         
