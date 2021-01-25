@@ -24,28 +24,56 @@ public class Solution {
         Stack<Integer> stack = new Stack<>();	// 인형이 쌓일 바구니
 		int count = 0;
         
-        for(int i = 0; i < moves.length; i++) {
-        	for(int j = 0; j < board.length; j++) {
+		for(int move : moves) {
+			for(int j = 0; j < board.length; j++) {
         		
-        		if(board[j][moves[i]-1] == 0) {
+				// 자리에 인형이 없을 경우
+        		if(board[j][move-1] == 0) {
         			continue;
         		}
         		
-        		if(!stack.isEmpty() && stack.peek() == board[j][moves[i]-1]) {
+        		if(!stack.isEmpty() && stack.peek() == board[j][move-1]) {
         			stack.pop();
-        			board[j][moves[i]-1] = 0;
+        			board[j][move-1] = 0;
         			count+=2;
         			break;
         		}
         		
-        		stack.push(board[j][moves[i]-1]);
-        		board[j][moves[i]-1] = 0;
+        		stack.push(board[j][move-1]);
+        		board[j][move-1] = 0;
         		
         		break;
         		
         	}
-        }
+		}
         
         return count;
     }
+	
+	/*
+    public int solution(int[][] board, int[] moves) {
+        int answer = 0;
+        Stack<Integer> stack = new Stack<>();
+        for (int move : moves) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[j][move - 1] != 0) {
+                    if (stack.isEmpty()) {
+                        stack.push(board[j][move - 1]);
+                        board[j][move - 1] = 0;
+                        break;
+                    }
+                    if (board[j][move - 1] == stack.peek()) {
+                        stack.pop();
+                        answer += 2;
+                    } else
+                        stack.push(board[j][move - 1]);
+                    board[j][move - 1] = 0;
+                    break;
+                }
+            }
+        }
+        return answer;
+    }
+    */
+	
 }
