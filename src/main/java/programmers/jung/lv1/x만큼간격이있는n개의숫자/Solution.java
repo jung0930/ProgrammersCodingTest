@@ -6,7 +6,6 @@ public class Solution {
 	public static void main(String[] args) {
 		int x = 10000000;
 		int n = 1000;
-		
 		solution(x, n);
 	}
 	
