@@ -13,28 +13,29 @@ public class ExersizeWear {
 
 	
     public static int solution(int n, int[] lost, int[] reserve) {
-		int[] all = new int[n];
-
-		for (int i : reserve) all[i - 1]++;
-	
-		for (int i : lost) all[i - 1]--;
-	
-		for (int i = 0; i < all.length; i++) {
-			if (all[i] < 0) {
-				if (i != all.length - 1 && all[i + 1] > 0) {
-					all[i]++;
-					all[i + 1]--;
-				} else if (i != 0 && all[i - 1] > 0) {
-					all[i]++;
-					all[i - 1]--;
-				}
-			}
-		}
-	
-		int answer = 0;
-	
-		for (int i = 0; i < all.length; i++) {
-			if (!(all[i] < 0)) {
+    	int answer = 0;
+    	int[] arr = new int[n];
+    	
+    	// 여분
+    	for(int i : reserve) arr[i-1]++;
+    	
+    	// 도난
+    	for(int i : lost) arr[i-1]--;
+    	
+    	for(int i = 0; i < n; i++) {
+    		if(arr[i] == -1) {
+    			if(i != 0 && arr[i-1] == 1) {
+    				arr[i]++;
+    				arr[i-1]--;
+    			}else if(i+1 != n && arr[i+1] == 1) {
+    				arr[i]++;
+    				arr[i+1]--;
+    			}
+    		}
+    	}
+    	
+		for (int i = 0; i < arr.length; i++) {
+			if (!(arr[i] < 0)) {
 				answer++;
 			}
 		}	
