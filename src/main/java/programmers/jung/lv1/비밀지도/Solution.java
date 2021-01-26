@@ -12,63 +12,35 @@ public class Solution {
 	}
 
     public static String[] solution(int n, int[] arr1, int[] arr2) {
-    	int[][] map1 = new int[n][n];
-    	int[][] map2 = new int[n][n];
+    	String[] map1 = new String[n];
+    	String[] map2 = new String[n];
     	String[] answer = new String[n];
-    	// int answerLength = answer.length;
     	
     	// map1
     	for(int i = 0; i < n; i++) {
-    		int index = n-1;
-    		int num = arr1[i];
-    		
-            if(num == 0) {
-    			continue;
-    		}
-            
-    		// 2진법셋팅
-        	while(true) {
-        		if(num == 1) {
-        			map1[i][index] = 1;
-        			break;
-        		}
-        		map1[i][index] = num%2;
-        		num = num/2;
-        		index--;
-        	}
+    		map1[i] = Integer.toBinaryString(arr1[i]);
     	}
 
     	// map2
-    	for(int i = 0; i < n; i++) { 
-    		int index = n-1;
-    		int num = arr2[i];
-    		
-            if(num == 0) {
-    			continue;
-    		}
-            
-    		// 2진법셋팅
-        	while(true) {
-        		if(num == 1) {
-        			map2[i][index] = 1;
-        			break;
-        		}
-        		map2[i][index] = num%2;
-        		num = num/2;
-        		index--;
-        	}
+    	for(int i = 0; i < n; i++) {
+    		map2[i] = Integer.toBinaryString(arr2[i]);
     	}
     	
-    	for(int i = 0; i < answer.length; i++) {
-    		String s = "";
-    		for(int j = 0; j < answer.length; j++) {
-        		if(map1[i][j] == 0 && map2[i][j] == 0 ) {
-        			s += " ";
+    	for(int i = 0; i < n; i++) {
+    		StringBuffer buffer = new StringBuffer();
+    		
+    		char[] char1 = String.format("%"+n+"s", map1[i]).toCharArray();
+    		char[] char2 = String.format("%"+n+"s", map2[i]).toCharArray();
+    		
+    		for(int j = 0; j < n; j++) {
+        		if((char1[j] == '0'||char1[j] == ' ') && (char2[j] == '0'||char2[j] == ' ')  ) {
+        			buffer.append(" ");
         		}else {
-        			s += "#";
+        			buffer.append("#");
         		}
-        	}
-    		answer[i] = s;
+    		}
+    		
+    		answer[i] = buffer.toString();
     	}
     	
         return answer;
