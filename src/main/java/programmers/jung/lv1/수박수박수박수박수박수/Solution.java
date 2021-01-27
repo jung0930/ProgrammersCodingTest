@@ -9,23 +9,13 @@ public class Solution {
 	}
 
     public static String solution(int n) {
-        StringBuffer strBuffer = new StringBuffer();
-        
-        if(n == 1) return "수";
-        
-        for(int i = 0; i < n/2; i++) {
-        	strBuffer.append("수박");
-        }
-        
-        if(n%2 == 1) strBuffer.append("수");
-        
-        return strBuffer.toString();
+    	StringBuffer buffer = new StringBuffer();
+    	
+    	for(int i = 1; i <= n; i++) {
+    		buffer.append(i % 2 == 0 ? "박" : "수");
+    	}
+    	
+        return buffer.toString();
     }
     
-    /*
-	for (int i = 0; i < n; i++)
-      result += i % 2 == 0 ? "수" : "박";
-        return result;
-    }
-    */
 }

@@ -10,19 +10,18 @@ import java.util.List;
 public class Solution {
 
 	public static void main(String[] args) {
-		String s = "zZzbcdefg";
+		String s = "Zbcdefg";
 		solution(s);
 	}
 
     public static String solution(String s) {
+    	StringBuffer buffer = new StringBuffer();
+    	String[] arr = s.split("");
     	
-    	List<String> list = new ArrayList<String>(Arrays.asList(s.split("")));
-    	int listSize = list.size();
-    	Collections.sort(list, Comparator.reverseOrder());
-    	StringBuffer buffer = new StringBuffer("");
+    	Arrays.sort(arr, Collections.reverseOrder());
     	
-    	for(int i = 0; i < listSize; i++) {
-    		buffer.append(list.get(i));
+    	for(int i = 0; i < arr.length; i++) {
+    		buffer.append(arr[i]);
     	}
     	
         return buffer.toString();

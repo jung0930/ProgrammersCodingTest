@@ -17,8 +17,7 @@ public class Solution {
             
             for(int i = 0; i < strLength; i++){
                if(!Character.isDigit(s.charAt(i))){
-                   answer = false;
-                   break;
+                   return false;
                }
             }
             
