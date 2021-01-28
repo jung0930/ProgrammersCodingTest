@@ -12,6 +12,34 @@ public class Solution {
 	}
 
     public static String[] solution(int n, int[] arr1, int[] arr2) {
+    	
+    	// 비트연산으로 구현
+    	String[] map = new String[n];
+    	String[] answer = new String[n];
+    	
+    	for(int i = 0; i < n; i++) {
+    		map[i] = Integer.toBinaryString(arr1[i] | arr2[i]);
+    	}
+    	
+    	for(int i = 0; i < n; i++) {
+    		StringBuffer buffer = new StringBuffer();
+    		
+    		char[] ch = String.format("%"+n+"s", map[i]).toCharArray();
+    		
+    		for(int j = 0; j < n; j++) {
+        		if(ch[j] == '0'||ch[j] == ' ') {
+        			buffer.append(" ");
+        		}else {
+        			buffer.append("#");
+        		}
+    		}
+    		
+    		answer[i] = buffer.toString();
+    	}
+    	
+        return answer;
+    	
+    	/*
     	String[] map1 = new String[n];
     	String[] map2 = new String[n];
     	String[] answer = new String[n];
@@ -44,5 +72,7 @@ public class Solution {
     	}
     	
         return answer;
+        
+        */
     }
 }
