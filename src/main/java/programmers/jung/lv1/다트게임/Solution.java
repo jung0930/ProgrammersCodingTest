@@ -41,7 +41,6 @@ public class Solution {
         return score[0] + score[1] + score[2];
     }
     
-    
     /*
     public int solution(String dartResult) {
         String[] arrTemp = dartResult.split("");
