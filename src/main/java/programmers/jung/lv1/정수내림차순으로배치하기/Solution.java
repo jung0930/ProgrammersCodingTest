@@ -15,6 +15,18 @@ public class Solution {
 	}
 	
     public static long solution(long n) {
+        String arr[]=String.valueOf(n).split("");
+
+	    Arrays.sort(arr);
+	    String str = "";
+	
+	    for(int i=arr.length-1; i>=0; i--){
+	         str+= arr[i];
+	    }
+	
+	    return Long.parseLong(str);
+    	
+    	/*
     	String s = "" + n;
     	Long[] array = new Long[s.length()];
         int index = 0;
@@ -34,6 +46,10 @@ public class Solution {
     	}
         
         return Long.parseLong(buffer.toString());
+        */
+        /*
+
+	    */
     }
     
 }
