@@ -36,6 +36,23 @@ public class KNumber {
     	}
         
         return answer;
+        
+        /* Arrays.copyOfRange
+        int[] answer = new int[commands.length];
+        int a = 0;
+        for(int[] info : commands){
+            int i = info[0];
+            int j = info[1];
+            int k = info[2];
+
+            int[] buf = Arrays.copyOfRange(array,i-1,j);
+            Arrays.sort(buf);
+            answer[a] = buf[k-1];
+            a++;
+        }
+
+        return answer;
+        */
     }
 	
 	
