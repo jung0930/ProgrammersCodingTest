@@ -15,6 +15,14 @@ public class Solution {
         	}
         }
         return -1;
+        
+        /*
+        if (Math.pow((int)Math.sqrt(n), 2) == n) {
+            return (long) Math.pow(Math.sqrt(n) + 1, 2);
+        }
+
+        return -1;
+        */
     }
 
 }
