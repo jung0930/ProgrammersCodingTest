@@ -37,7 +37,7 @@ public class NumberArray {
         return answer;
         
         // stream 풀이
-        // return Arrays.stream(array).filter(factor -> factor % divisor == 0).toArray();
+        // return Arrays.stream(array).filter(factor -> factor % divisor == 0).toArray(); 
 	}
     
 }
