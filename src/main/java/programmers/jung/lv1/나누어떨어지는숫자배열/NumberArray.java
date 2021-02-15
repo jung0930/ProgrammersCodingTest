@@ -35,6 +35,9 @@ public class NumberArray {
         Arrays.sort(answer);
         
         return answer;
+        
+        // stream 풀이
+        // return Arrays.stream(array).filter(factor -> factor % divisor == 0).toArray();
 	}
     
 }
