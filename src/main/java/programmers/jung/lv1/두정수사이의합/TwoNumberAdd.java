@@ -12,19 +12,17 @@ public class TwoNumberAdd {
 	}    
 	
 	public static long solution(int a, int b) {
-	       if(a == b) {
-	        	return a;
-	        }
-
-	        long answer = 0;
-	        int min = Math.min(a, b);
-	        int max = Math.max(a, b);
-	        
-			for(int i = min; i <= max; i++) {
-				answer += i;
-			}
-			
-	        return answer;
+		if(a == b) return a;
+		
+		long answer = 0;
+		int max = Math.max(a, b);
+		int min = Math.min(a, b);
+		
+		for(; min <= max; min++) {
+			answer += min;
+		}
+		
+		return answer;
     }
 	
 	
