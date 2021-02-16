@@ -10,18 +10,12 @@ public class GetAmongCharacter {
 	}
 	
 	  public static String solution(String s) {
-		  int sLength = s.length();
 		  String answer = "";
+		  int sLength = s.length();
 		  
-		  if(sLength % 2 == 0) { // 짝수
-			  answer = s.substring(sLength/2-1, sLength/2+1);
-		  }else { // 홀수
-			  answer = s.substring(sLength/2, sLength/2+1);
-		  }
+		  answer = sLength % 2 == 1?s.substring(sLength/2, sLength/2+1):s.substring(sLength/2-1, sLength/2+1);
 		  
 		  return answer;
-		  
-		  // return word.substring((word.length()-1) / 2, word.length()/2 + 1); 
 	  }
 	  
 }
