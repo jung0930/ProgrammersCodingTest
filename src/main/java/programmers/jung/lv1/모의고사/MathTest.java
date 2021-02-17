@@ -52,7 +52,7 @@ public class MathTest {
             {3, 3, 1, 1, 2, 2, 4, 4, 5, 5}
         };
 
-        int[] hit = new int[3];
+        int[] hit = new int[patterns.length];
         for(int i = 0; i < hit.length; i++) {
             for(int j = 0; j < answers.length; j++) {
                 if(patterns[i][j % patterns[i].length] == answers[j]) hit[i]++;
