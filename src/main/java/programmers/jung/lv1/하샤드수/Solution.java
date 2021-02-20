@@ -33,7 +33,7 @@ public class Solution {
 	
 	    if (num % sum == 0) {
 	            return true;
-	    } else {
+	    } else { 
 	      return false;
 	    }
     	*/
