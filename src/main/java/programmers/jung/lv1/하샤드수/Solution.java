@@ -23,5 +23,19 @@ public class Solution {
     	}
     	
         return num%sum==0?true:false;
+        
+        
+        /*
+        int sum = 0;
+	    for (String s : temp) {
+	        sum += Integer.parseInt(s);
+	    }
+	
+	    if (num % sum == 0) {
+	            return true;
+	    } else {
+	      return false;
+	    }
+    	*/
     }
 }
