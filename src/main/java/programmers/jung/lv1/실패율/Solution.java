@@ -25,7 +25,22 @@ public class Solution {
             
             for(int j = 0; j < stages.length; j++) {
                 int player = stages[j];
+                
+                if(stage == player) {
+                    incompletePlayers++;
+                }
+                if(player >= stage) {
+                    curretStageTotalPlayers++;
+                }
             }
+            
+            double failureRate = 0;
+            
+            if(incompletePlayers != 0 && curretStageTotalPlayers != 0) {
+                failureRate = (incompletePlayers / (double)curretStageTotalPlayers);
+            }
+            
+            failmap.put(stage,failureRate);
         }
         
         
