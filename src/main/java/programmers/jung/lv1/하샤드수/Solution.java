@@ -1,5 +1,6 @@
 package main.java.programmers.jung.lv1.하샤드수;
 
+// https://programmers.co.kr/learn/courses/30/lessons/12947
 public class Solution {
 
 	public static void main(String[] args) {

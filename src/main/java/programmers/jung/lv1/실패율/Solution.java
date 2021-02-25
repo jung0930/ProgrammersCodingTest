@@ -2,6 +2,7 @@ package main.java.programmers.jung.lv1.실패율;
 
 import java.util.HashMap;
 
+// https://programmers.co.kr/learn/courses/30/lessons/42889
 public class Solution {
 
 	public static void main(String[] args) {
@@ -11,7 +12,6 @@ public class Solution {
 		solution(N, stages);
 
 	}
-
 	
 	public static int[] solution(int N, int[] stages) {
         

@@ -1,5 +1,6 @@
 package main.java.programmers.jung.lv1.약수의합;
 
+// https://programmers.co.kr/learn/courses/30/lessons/12928
 public class Solution {
 
 	public static void main(String[] args) {

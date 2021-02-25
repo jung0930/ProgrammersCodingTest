@@ -2,6 +2,7 @@ package main.java.programmers.jung.lv1.예산;
 
 import java.util.Arrays;
 
+// https://programmers.co.kr/learn/courses/30/lessons/12982
 public class Solution {
 
 	public static void main(String[] args) {

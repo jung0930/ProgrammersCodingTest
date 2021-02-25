@@ -1,5 +1,6 @@
 package main.java.programmers.jung.lv1.이천십육년;
 
+// https://programmers.co.kr/learn/courses/30/lessons/12901
 public class Solution {
 
 	public static void main(String[] args) {

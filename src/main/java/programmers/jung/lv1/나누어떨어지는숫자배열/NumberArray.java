@@ -3,6 +3,7 @@ package main.java.programmers.jung.lv1.나누어떨어지는숫자배열;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+// https://programmers.co.kr/learn/courses/30/lessons/12910
 public class NumberArray {
 
 	public static void main(String[] args) {
