@@ -43,7 +43,18 @@ public class Solution {
             failmap.put(stage,failureRate);
         }
         
-        
+        for(int i=0; i<N; i++) {
+            double max = -1;
+            int maxkey = 0; 
+            for ( Integer key : failmap.keySet()) {
+               if(max <failmap.get(key)) {
+                   max = failmap.get(key);
+                   maxkey = key;
+               }
+            }
+            answer[i]=maxkey;
+            failmap.remove(maxkey);
+        }
         return answer;
     }
 }
