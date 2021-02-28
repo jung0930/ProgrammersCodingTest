@@ -31,7 +31,21 @@ public class Solution {
 				dq.offer(c);
 			}
 		}
-        
+		
+		// 3. 마침표(.)가 2번 이상 연속되면 하나로 치환
+		char prev = dq.poll();
+		newDq.offer(prev);
+			
+		while (!dq.isEmpty()) {
+			char ch = dq.poll();
+			if (ch == '.' && ch == prev) {
+				continue;
+			} else {
+				newDq.offer(ch);
+			}
+			prev = ch;
+		}
+		
         return answer;
     }
 }
