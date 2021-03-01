@@ -46,6 +46,21 @@ public class Solution {
 			prev = ch;
 		}
 		
+		// 4. 마침표가 처음이나 끝에 위치한다면 제거
+		if (newDq.size() == 1) {
+			if (newDq.peekFirst() == '.') {
+				newDq.pollFirst();
+			}
+
+		} else if (newDq.size() > 1) {
+			if (newDq.peekFirst() == '.') {
+				newDq.pollFirst();
+			}
+			if (newDq.peekLast() == '.') {
+				newDq.pollLast();
+			}
+		}
+		
         return answer;
     }
 }
