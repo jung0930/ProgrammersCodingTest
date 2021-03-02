@@ -60,6 +60,10 @@ public class Solution {
 				newDq.pollLast();
 			}
 		}
+		// 5. 빈 문자열이라면 "a"를 대입
+		if (newDq.size() == 0) {
+			newDq.offer('a');
+		}
 		
         return answer;
     }
