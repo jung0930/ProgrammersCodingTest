@@ -60,9 +60,21 @@ public class Solution {
 				newDq.pollLast();
 			}
 		}
+		
 		// 5. 빈 문자열이라면 "a"를 대입
 		if (newDq.size() == 0) {
 			newDq.offer('a');
+		}
+
+		// 6. 길이가 16자 이상이면 15개 이후로 제거, 만약 제거후 마침표가 마지막에 있으면 그것도 제거
+		if (newDq.size() >= 16) {
+			while (newDq.size() != 15) {
+				newDq.pollLast();
+			}
+
+			if (newDq.peekLast() == '.') {
+				newDq.pollLast();
+			}
 		}
 		
         return answer;
