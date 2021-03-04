@@ -76,6 +76,14 @@ public class Solution {
 				newDq.pollLast();
 			}
 		}
+
+		// 7. 길이가 2자 이하라면 마지막 문자를 길이가 3이 될때가지 끝에 넣기
+		if (newDq.size() <= 2) {
+			while (newDq.size() != 3) {
+				char ch = newDq.peekLast();
+				newDq.offer(ch);
+			}
+		}
 		
         return answer;
     }
