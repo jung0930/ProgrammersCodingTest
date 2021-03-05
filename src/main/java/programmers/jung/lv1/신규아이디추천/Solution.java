@@ -85,6 +85,13 @@ public class Solution {
 			}
 		}
 		
+		StringBuilder sb = new StringBuilder();
+		while (!newDq.isEmpty()) {
+			sb.append(newDq.poll());
+		}
+
+		answer = sb.toString();
+		
         return answer;
     }
 }
